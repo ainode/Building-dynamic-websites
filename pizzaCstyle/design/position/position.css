@@ -1,0 +1,17 @@
+
+.posdiv {
+	  width:100px;
+	  height:100px;
+	  background:red;
+	  position:absolute;
+	  left:20px;
+	  top:20px;
+}
+.maindiv {
+	  width:500px;
+	  height:500px;
+	  background:yellow;
+	  left:40px;
+	  top:60px;
+	  position:relative;
+}

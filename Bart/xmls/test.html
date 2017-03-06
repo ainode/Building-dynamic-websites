@@ -1,0 +1,113 @@
+<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+	<html xmlns="http://www.w3.org/1999/xhtml">
+				
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<script type="text/javascript"> 
+
+function show_window()
+        
+{
+   // alert(marker);       
+// instantiate XMLHttpRequest object
+            
+try
+            
+{
+                
+xhrm = new XMLHttpRequest();
+            
+}
+            catch (e)
+            
+{
+                
+xhrm = new ActiveXObject("Microsoft.XMLHTTP");
+            
+}
+
+            
+// handle old browsers
+            
+if (xhrm == null)
+            
+{
+                
+alert("Ajax not supported by your browser!");
+                
+return;
+            
+}
+
+            
+// construct URL
+            
+var url = "abbr.php?abbr=FRMT" ;
+
+            
+//var url = "edt.xml";
+
+            
+//var url = xmlname + ".xml"
+
+            
+// get quote
+            
+xhrm.onreadystatechange = infohandler;
+            
+xhrm.open("GET", url, true);
+            
+xhrm.send(null);
+  //alert("hi");      
+}
+
+
+        
+/*
+         * void
+         * handler()
+         *
+         * Handles the Ajax response.
+         */
+        
+
+function infohandler()
+        
+{
+          // only handle requests in "loaded" state
+            
+if (xhrm.readyState == 4)
+            
+{
+                
+if (xhrm.status == 200)
+                
+{
+                    // get XML
+                    
+var stnxml=xhrm.responseText;
+var message = "";
+//for (x=0; x<= dest_num; x++)
+	//{
+	//  message = message + "Next train departs at"+ time[0].childNodes[0].nodeValue + " Destination:" + destination + "Platform:" + plat[0].childNodes[0].nodeValue + "Direction:" + dir[0].childNodes[0].nodeValue;
+      //message = message + "Next train departs at"+ time[x].childNodes[0].nodeValue; + "Platform:" + plat[x].childNodes[0].nodeValue; + "Direction:" + dir[x].childNodes[0].nodeValue;
+	//}
+//message_array.push(message);
+//message_array.push(stnxml);
+document.getElementById("test").innerHTML = stnxml;
+}
+
+} 
+
+}
+</script>
+</head>
+<body>
+<button onclick="show_window();">station</button>
+<div id="test"></div>
+</body>
+</html>
+</body>

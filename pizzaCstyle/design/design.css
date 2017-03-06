@@ -1,0 +1,32 @@
+
+
+table.banner {
+	   background:black; 
+}
+div.banner {
+	   background:blue; height:329px; width:629px;
+           background:url(pizza1.jpg); center no-repeat;
+}
+div.header {
+	   background:green; height:120px; width:800px;
+	   background:url(vegetables.jpg); float:right ;
+}
+body{
+	   font-family:arial;
+}
+table{
+	   font-size:80%;background:green;
+}
+a{
+	   color:black;text-decoration:none;font:bold
+}
+a:hover{
+	   color:#606060
+}
+td.menu{background:lightblue}
+table.menu
+{
+font-size:100%;
+position:absolute;
+visibility:hidden;
+}
